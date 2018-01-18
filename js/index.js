@@ -1,28 +1,57 @@
-$(function(){
+$(function () {
 	//初始化左边页面,现在需要在页面中调用jtree_init
 	//initleftside();
 
 	//调用jtree
 	jtree_init();
 	// 
-	$("#searchTreeBtn").bind("click",function(){
-	    if($("#searchTree").val()!=""){$("#searchTreeClose").show();}
-	    $('ul.tree').colExpAll({clickType:'search'});
+	// $(".treesearchbtn").bind("click", function () {
+	// 	if ($("#searchTree").val() != "") {
+	// 		$("#searchTreeClose").show();
+	// 	} else {
+	// 		$("#searchTreeClose").hide();
+	// 	};
+	// 	$('ul.tree').colExpAll({
+	// 		clickType: 'search'
+	// 	});
+
+	// 	// 点击搜索绑定一下这个事件；
+	// 	$("a").off("click").on("click", function (e) {
+	// 		if (e.target.dataset.src) {
+	// 			$("iframe").attr("src", e.target.dataset.src)
+	// 		}
+	// 	})
+
+	// });
+	$("#searchTree").bind("keydown", function (e) {
+		if (e.keyCode == 13) {
+			if ($("#searchTree").val() != "") {
+				$("#searchTreeClose").show();
+			} else {
+				$("#searchTreeClose").hide();
+			};
+			$('ul.tree').colExpAll({
+				clickType: 'search'
+			})
+
+			// 点击搜索绑定一下这个事件；
+			$("a").off("click").on("click", function (e) {
+				if (e.target.dataset.src) {
+					$("iframe").attr("src", e.target.dataset.src)
+				}
+			})
+		}
 	});
-	$("#searchTree").bind("keydown",function(e){
-       if(e.keyCode==13){
-           if($("#searchTree").val()!=""){$("#searchTreeClose").show();}else{$("#searchTreeClose").hide();};
-           $('ul.tree').colExpAll({clickType:'search'})
-       }
-     });
-	$("#searchTreeClose").bind("click",function(){
-	    $("#searchTreeClose").hide();
-	    $("#searchTree").val("");
-	    $('ul.tree').colExpAll({clickType:'close'});
-	});
+	// $("#searchTreeClose").bind("click", function () {
+	// 	$("#searchTreeClose").hide();
+	// 	$("#searchTree").val("");
+	// 	$('ul.tree').colExpAll({
+	// 		clickType: 'close'
+	// 	});
+	// });
 })
 
-function jtree_init(){
+function jtree_init() {
 	var $p = $(document);
 	$("ul.tree", $p).jTree();
 	// $('div.accordion', $p).each(function(){
@@ -36,10 +65,7 @@ function jtree_init(){
 }
 
 $.fn.extend({
-	size:function(){
+	size: function () {
 		return this.length;
-	}	
+	}
 })
-
-
-
