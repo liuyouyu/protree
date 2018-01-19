@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 百度icon -->
+  <link rel="shortcut icon" href="http://www.baidu.com/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div style="font-size:14px;color:blanchedalmond;">
+   清楚缓存，强制刷新；打开控制台；看network-img；每次debuger之前都会有个数据请求；说明src属性是  <span style="color:fuchsia;font-size:20px;">同步的！！！！！！</span>
+   执行的src属性时就开始加载资源；
+  </div>
+  <img class="img1" src="" alt="">
+  <img class="img2" src="" alt="">
+  <img class="img3" src="" alt="">
+  <iframe src="" frameborder="0"  width="100%" scrolling="no" height="500" id="iframe"></iframe>
+  <script>
+    // document.querySelector('#iframe').setAttribute("src",'http://www.hao123.com/')
+    document.querySelector('.img1').setAttribute("src",'icon.png')
+    debugger;
+    document.querySelector('.img2').setAttribute("src",'icon.1.png')
+    debugger;
+    document.querySelector('.img3').setAttribute("src",'icon.2.png')
+  </script>
+</body>
+
+</html>
