@@ -267,3 +267,11 @@ ul.ztree.zTreeDragUL { margin: 0; padding: 0; position: absolute; width: auto; h
 .color-black { color: #000; }
 .tree li a, .tree li span { color: #183152; text-decoration: none; font-size: 12px; }
 .tree div, .tree a, .tree span { display: inherit; white-space: nowrap; }
+ 
+
+.accordion a:hover{
+	background:#57D5D7;
+}
+.accordion {
+	border-color:rgb(238,238,238);
+}
